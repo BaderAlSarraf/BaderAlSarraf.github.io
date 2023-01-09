@@ -1,0 +1,43 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 500,
+  "height": 400,
+  "title": {
+    "text": "USA Primary Elections 2020",
+    "subtitle": "Voter Turnout by State. Source: United States Elections Project",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 12,
+    "offset": 10,
+    "fontSize": 16,
+    "color": "black"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/main/charts/maps/geoUSStates.json",
+    "format": {"property": "features"}
+  },
+  "projection": {"type": "albersUsa"},
+  "transform": [
+    {
+      "lookup": "properties.NAME",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/BaderAlSarraf/BaderAlSarraf.github.io/main/US%20Voter%20Turnouts%20-%202018.csv"
+        },
+        "key": "State",
+        "fields": ["Voter Turnout (%)"]
+      }
+    }
+  ],
+  "mark": {"type": "geoshape", "stroke": "darkgray", "strokeWidth": 0.5},
+  "encoding": {
+    "color": {"field": "Voter Turnout (%)", "type": "quantitative"},
+    "tooltip": [
+      {"field": "properties.NAME", "type": "nominal", "title": "State"},
+      {
+        "field": "Voter Turnout (%)",
+        "type": "quantitative",
+        "title": "Voter Turnout (%)"
+      }
+    ]
+  }
+}

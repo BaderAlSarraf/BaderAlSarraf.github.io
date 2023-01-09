@@ -1,0 +1,24 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 400,
+    "config": {"background": "#122b39", "view": {"stroke": "transparent"}},
+    "title": {
+      "text": "Map of the United States of America",
+      "color": "#cbc7cf",
+      "fontSize": 15,
+      "offset": -30
+    },
+    "data": {
+      "url": "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/main/charts/maps/geoUSStates.json",
+      "format": {"property": "features"}
+    },
+    "projection": {"type": "albersUsa"},
+    "mark": {
+      "type": "geoshape",
+      "fill": "#eff3b9",
+      "stroke": "black",
+      "strokeWidth": 0.6
+    },
+    "encoding": {"tooltip": {"field": "properties.NAME"}}
+  }
