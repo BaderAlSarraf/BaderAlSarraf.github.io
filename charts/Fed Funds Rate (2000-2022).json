@@ -1,0 +1,89 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+      "text": "Federal Funds Effective Rate (2000-2022)",
+      "subtitle": [
+        "Daily Rates; Not Seasonally Adjusted. Source: FRED (DFF)",
+        ""
+      ],
+      "subtitleFontStyle": "italic",
+      "subtitleFontSize": 10,
+      "anchor": "start",
+      "color": "#cbc7cf",
+      "subtitleColor": "#cbc7cf"
+    },
+    "width": 550,
+    "height": 327,
+    "config": {"background": "#122b39", "view": {"stroke": "transparent"}},
+    "data": {
+      "url": "https://api.allorigins.win/raw?url=https%3A%2F%2Fapi.stlouisfed.org%2Ffred%2Fseries%2Fobservations%3Fseries_id%3DDFF%26observation_start%3D2000-01-01%26api_key%3D1b3f625fde91ff06ede2b9d22b07fca2%26file_type%3Djson%0A",
+      "format": {"type": "json", "property": "observations"}
+    },
+    "transform": [
+      {"calculate": "year(datum.date)", "as": "year"},
+      {"filter": "datum.year>2000"},
+      {"calculate": "maxYear", "as": "maxYear"},
+      {"calculate": "minYear", "as": "minYear"},
+      {"filter": "datum.year>=minYear"},
+      {"filter": "datum.year<=maxYear"}
+    ],
+    "params": [
+      {
+        "name": "minYear",
+        "value": 2000,
+        "bind": {
+          "input": "range",
+          "min": 2000,
+          "max": 2022,
+          "step": 1,
+          "name": "Start year:"
+        }
+      },
+      {
+        "name": "maxYear",
+        "value": 2022,
+        "bind": {
+          "input": "range",
+          "min": 2000,
+          "max": 2022,
+          "step": 1,
+          "name": "End year:"
+        }
+      }
+    ],
+    "mark": {
+      "type": "line",
+      "color": "#c3b091",
+      "interpolate": "step",
+      "width": 5,
+      "strokeWidth": 2,
+      "opacity": 1
+    },
+    "encoding": {
+      "x": {
+        "field": "date",
+        "type": "temporal",
+        "title": null,
+        "axis": {"grid": false, "labelColor": "#cbc7cf"}
+      },
+      "y": {
+        "field": "value",
+        "type": "quantitative",
+        "title": null,
+        "axis": {"grid": false, "labelColor": "#cbc7cf"}
+      },
+      "tooltip": [
+        {
+          "field": "date",
+          "title": "Date",
+          "type": "temporal"
+        },
+        {
+          "field": "value",
+          "type": "quantitative",
+          "title": "Fed Rate (%)"
+        }
+      ]
+    },
+    "autosize": {"type": "pad", "contains": "padding", "resize": true}
+  }

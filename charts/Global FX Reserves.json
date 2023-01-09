@@ -1,0 +1,90 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+      "text": "Currency Composition of Total Foreign Exchange Reserves",
+      "subtitle": ["Worldwide Shares of Allocated Reserves in USD, EUR, JPY. Source: IMF", ""],
+      "subtitleFontStyle": "italic",
+      "subtitleFontSize": 10,
+      "anchor": "start",
+      "color": "#cbc7cf",
+      "subtitleColor": "#cbc7cf"
+    },
+    "height": 300,
+    "config": {"background": "#122b39", "view": {"stroke": "transparent"}},
+    "data": {"url": "https://raw.githubusercontent.com/BaderAlSarraf/BaderAlSarraf.github.io/main/FX%20Reserves.csv"},
+        "mark": {
+      "type": "bar",
+      "stroke": "black",
+      "strokeWidth": 0.2
+    },
+  
+  
+  "transform": [
+      {"filter": {"selection": "CurrencySelector"}},
+      {
+        "filter": {
+          "field": "Currency",
+          "oneOf": [
+            "Shares of U.S. dollars (%)",
+            "Shares of Euro (%)",
+            "Shares of Japanese Yen (%)"
+          ]
+        }
+      }
+    ],
+    "selection": {
+      "CurrencySelector": {
+        "type": "single",
+        "fields": ["Currency"],
+        "bind": {
+          "input": "select",
+          "options": [
+            null,
+            "Shares of U.S. dollars (%)",
+            "Shares of Euro (%)",
+            "Shares of Japanese Yen (%)"
+          ],
+          "name": "Currency"
+        }
+      }
+    },
+  
+  
+    "encoding": {
+      "x": {
+        "field": "Year",
+        "type": "nominal",
+        "title": "Year",
+        "axis": {"grid": false, "labelColor": "#cbc7cf", "titleColor": "#cbc7cf", "titleFontSize": 11, "titlePadding": 12}
+      },
+      "y": {
+        "field": "FX Reserves",
+        "type": "quantitative",
+        "title": "FX Reserves (%)",
+        "axis": {"grid": false, "labelColor": "#cbc7cf", "titleColor": "#cbc7cf", "titleFontSize": 11,"titlePadding": 6},
+        "sort": "ascending"
+      },
+      "color": {
+    "field": "Currency",
+    "type": "nominal",
+    "scale": {
+      "range": ["#f7e7ce", "#c3b091", "#c88b6f"]
+    },
+    "title": "Currency",
+    "legend": {
+      "titleColor": "#cbc7cf",
+      "titleFontSize": 11,
+      "labelColor": "#cbc7cf",
+      "labelFontSize": 10
+  
+    }
+  },
+  
+      "tooltip":[
+        {"field":"Currency","type":"nominal", "title": "Currency Share"},
+         {"field":"FX Reserves","type":"quantitative", "title": "FX Reserves (%)"},
+         {"field":"Year","type":"nominal"}
+      ]
+    },
+    "autosize": {"type": "pad", "contains": "padding", "resize": true}
+  }

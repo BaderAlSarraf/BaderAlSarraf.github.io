@@ -1,0 +1,119 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+         
+    "title": {
+        "text": "US Dollar Index and 10Y Bonds (2000-2022)",
+        "subtitle":["Intraday % change (Filtered for Fed Jawboning). Source: Yahoo Finance, FRED",""],
+        "subtitleFontStyle":"italic",
+        "subtitleFontSize":10,
+        "anchor": "start",
+        "color": "#cbc7cf",
+        "subtitleColor": "#cbc7cf"},
+        
+    "data": {
+        "url": "https://raw.githubusercontent.com/BaderAlSarraf/BaderAlSarraf.github.io/main/NEW%20FORMAT%20(MM-DD).csv"
+        },
+
+    "height": 250,
+    "width": 350,
+    "config": {"background": "#122b39", "view": {"stroke": "transparent"}},  
+    
+    "transform": [
+        {"fold":["US10Y Percent Change", "DXY Return (%)"], "as": ["Security", "Return"]},
+            {"calculate": "year(datum.date)", "as": "year"},
+    {"filter": "datum.year>=minYear"},
+    {"filter": "datum.year<=maxYear"}
+        ],
+
+          "params": [
+    {
+      "name": "minYear",
+      "value": 2000,
+      "bind": {
+        "input": "range",
+        "min": 2000,
+        "max": 2022,
+        "step": 1,
+        "name": "Start year:"
+      }
+    },
+    {
+      "name": "maxYear",
+      "value": 2022,
+      "bind": {
+        "input": "range",
+        "min": 2000,
+        "max": 2022,
+        "step": 1,
+        "name": "End year:"
+      }
+    }
+  ],
+ 
+    
+    "mark": {   
+            "type":"line",
+            "strokeWidth":2},    
+    
+    "encoding": {
+            "x": {
+                "field": "date",
+                "type": "temporal",
+                "title":null,
+                "axis": {"tickWidth": 2, "grid": false, "labelColor": "#cbc7cf", "titleColor": "#cbc7cf", "labelFontSize": 11, "titlePadding": 12, "labelPadding": 5}
+    },
+    
+            "y": {
+                "field": "Return",
+                "type": "quantitative",
+                "axis": {"tickWidth": 2, "labelFontSize": 11, "grid": false, "labelColor": "#cbc7cf", "titleColor": "#cbc7cf", "titleFontSize": 11,"titlePadding": 6, "labelPadding": 5},
+                "title": "Percent"},
+
+            "color": {
+            "field": "Security",
+            "scale": {"range": ["#eff3b9", "#c88b6f"]},
+            "legend": {
+        "orient": "bottom",
+        "labelOffset": 5,
+        "labelBaseline": "middle",
+        "titleColor": "white",
+        "labelColor": "white",
+        "symbolSize": 40,
+        "labelFontSize": 10,
+        "legendX": 8,
+        "legendY": 10
+      },
+            "type": "nominal"
+            },
+    
+    
+            "facet": {
+                "field": "Security",
+                "columns": 2,
+                "title": null,
+                "header": {
+        "labelColor": "#e1e5e4",
+        "labelFontSize": 11
+      }
+      },
+      "tooltip": [
+      {
+        "field": "date",
+        "title": "Date",
+        "type": "temporal"
+      },
+      {
+        "field": "Security",
+        "type": "nominal",
+        "title": "Security"
+      },
+      {
+        "field": "Return",
+        "type": "quantitative",
+        "title": "Return (%)"
+      }
+    ]
+    },
+  
+      "resolve": {"scale": {"y": "independent"}}
+  }

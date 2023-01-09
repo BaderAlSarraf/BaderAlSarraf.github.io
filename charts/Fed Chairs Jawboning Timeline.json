@@ -1,0 +1,114 @@
+{
+    "title": {
+      "text": "Jawboning by Federal Reserve Chairs (2000-2022)",
+      "subtitle": ["Topic Trends in Jawboning Speeches. Source: Federal Reserve Board of Governors", ""],
+      "fontSize": 13,
+      "subtitleFontStyle": "italic",
+      "subtitleFontSize": 10,
+      "anchor": "start",
+      "color": "#cbc7cf",
+      "subtitleColor": "#cbc7cf"},
+  
+  "height": 313,
+  "width": 350,
+  "config": {"background": "#122b39", "view": {"stroke": "transparent"}},  
+  
+          "data": {
+           "url": "https://raw.githubusercontent.com/BaderAlSarraf/BaderAlSarraf.github.io/main/Fed%20Chairs%20Jawboning.json"},
+  
+      "selection": {
+      "Speech Type": {
+        "type": "single",
+        "fields": ["speechType"],
+        "bind": {
+          "input": "select",
+          "options": [
+            null,
+            "Economic Outlook",
+            "Fed Policies",
+            "Financial Markets",
+            "Inflation Update",
+            "Monetary Policy"
+          ],
+          "name": "Speech Type"
+        }
+      }
+    },
+    "transform": [
+      {"calculate": "year(datum.date)", "as": "year"},
+      {"filter": {"selection": "Speech Type"}},
+  
+      {"filter": "datum.year>=minYear"},
+      {"filter": "datum.year<=maxYear"}
+    ],
+    "params": [
+      {
+        "name": "minYear",
+        "value": 2015,
+        "bind": {
+          "input": "range",
+          "min": 2000,
+          "max": 2022,
+          "step": 1,
+          "name": "Start year:"
+        }
+      },
+      {
+        "name": "maxYear",
+        "value": 2022,
+        "bind": {
+          "input": "range",
+          "min": 2000,
+          "max": 2022,
+          "step": 1,
+          "name": "End year:"
+        }
+      }
+    ],
+  
+    "mark": {
+        "type":"point",
+        "size":200,
+        "color":"rgb(0,67,167)",
+        "opacity":1},
+    
+    "encoding": {
+      "x": {
+        "field": "date",
+        "type": "temporal",
+        "title": null,
+        "axis": {"labelColor": "#cbc7cf", "titleColor": "#cbc7cf", "titleFontSize": 11, "titlePadding": 12}
+      },
+      "y": {
+        "field": "speechType",
+        "title": "Speech Type",
+        "axis": {"tickWidth": 2, "labelFontSize": 11, "grid": false, "labelColor": "#cbc7cf", "titleColor": "#cbc7cf", "titleFontSize": 11,"titlePadding": 5, "labelPadding": 3},
+        "type": "nominal"
+      },
+      "shape": {
+        "field": "speechType",
+        "type": "nominal",
+        "legend": {
+          "orient": "right",
+          "labelOffset": 5,
+          "offset": -3,
+          "labelColor": "white",
+          "titleColor": "white",
+          "symbolSize": 80,
+          "labelFontSize": 10,
+          "anchor": "left"}
+      },
+  
+      "color": {
+        "field": "speechType",
+        "title": "Speech Type",
+        "type": "nominal"
+      },
+  
+     "tooltip": [
+        { "field": "date", "type": "temporal", "title": "Date"},
+        { "field": "speechType", "title": "Speech Type", "type": "nominal"},
+        { "field": "speaker", "type": "nominal", "title": "Speaker"}
+      ]
+    }
+  }

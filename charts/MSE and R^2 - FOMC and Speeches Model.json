@@ -1,0 +1,124 @@
+{
+  "config": {
+    "background": "#122b39",
+    "height": 220,
+    "width": 400,
+    "view": {
+      "stroke": "transparent"
+    }
+  },
+  "vconcat": [
+    {
+      "title": {
+        "text": "R-squared and Mean Squared Error - FOMC vs. Speeches",
+        "subtitle": [
+          "Comparing R-squared and MSE for both models using Machine Learning. Source: Google Colab",
+          ""
+        ],
+        "subtitleFontStyle": "italic",
+        "subtitleFontSize": 10,
+        "anchor": "start",
+        "color": "#cbc7cf",
+        "subtitleColor": "#cbc7cf"
+      },
+      "mark": "bar",
+      "encoding": {
+        "color": {"field": "Model", "type": "nominal"},
+        "x": {
+          "field": "R-squared",
+          "type": "quantitative",
+          "axis": {
+            "tickWidth": 2,
+            "grid": false,
+            "labelColor": "#cbc7cf",
+            "titleColor": "#cbc7cf",
+            "labelFontSize": 11,
+            "titlePadding": 12,
+            "labelPadding": 5
+          }
+        },
+        "y": {
+          "field": "Model",
+          "type": "nominal",
+          "axis": {
+            "tickWidth": 2,
+            "grid": false,
+            "labelColor": "#cbc7cf",
+            "titleColor": "#cbc7cf",
+            "labelFontSize": 11,
+            "titlePadding": 12,
+            "labelPadding": 5
+          }
+        },
+        "tooltip": [
+          {
+            "field": "R-squared",
+            "type": "quantitative",
+            "title": "R-squared Value",
+            "format": ".2f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "color": {
+          "field": "Model",
+          "type": "nominal",
+          "scale": {"range": ["#eff3b9", "#c88b6f"]},
+          "legend": {"titleColor": "#cbc7cf", "labelColor": "#cbc7cf"}
+        },
+        "x": {
+          "field": "Mean Squared Error",
+          "type": "quantitative",
+          "axis": {
+            "tickWidth": 2,
+            "grid": false,
+            "labelColor": "#cbc7cf",
+            "titleColor": "#cbc7cf",
+            "labelFontSize": 11,
+            "titlePadding": 12,
+            "labelPadding": 5
+          }
+        },
+        "y": {
+          "field": "Model",
+          "type": "nominal",
+          "axis": {
+            "tickWidth": 2,
+            "grid": false,
+            "labelColor": "#cbc7cf",
+            "titleColor": "#cbc7cf",
+            "labelFontSize": 11,
+            "titlePadding": 12,
+            "labelPadding": 5
+          }
+        },
+        "tooltip": [
+          {
+            "field": "Mean Squared Error",
+            "type": "quantitative",
+            "title": "MSE Value",
+            "format": ".2f"
+          }
+        ]
+      }
+    }
+  ],
+  "data": {"name": "data-f97c3a3a77f60d925c232f1d791617b1"},
+  "datasets": {
+    "data-f97c3a3a77f60d925c232f1d791617b1": [
+      {
+        "Model": "FOMC",
+        "R-squared": -0.008117237753227924,
+        "Mean Squared Error": 44.09536532747442
+      },
+      {
+        "Model": "Speeches",
+        "R-squared": -0.1219997627506948,
+        "Mean Squared Error": 11.667317116253598
+      }
+    ]
+  }
+}

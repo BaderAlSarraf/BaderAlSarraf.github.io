@@ -1,0 +1,468 @@
+{
+  "config": {
+    "background": "#122b39",
+    "view": {
+      "continuousWidth": 400,
+      "continuousHeight": 300,
+      "stroke": "transparent"
+    }
+  },
+  "title": {
+    "text": "Regression of DXY - Speeches Model (2000-2022)",
+    "subtitle": ["Filtered for Jawboning Speeches. Source: Google Colab", ""],
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "#cbc7cf",
+    "subtitleColor": "#cbc7cf"
+  },
+  "transform": [
+    {"calculate": "year(datum.date)", "as": "year"},
+    {"filter": "datum.year>=minYear"},
+    {"filter": "datum.year<=maxYear"}
+  ],
+  "params": [
+    {
+      "name": "minYear",
+      "value": 2000,
+      "bind": {
+        "input": "range",
+        "min": 2000,
+        "max": 2022,
+        "step": 1,
+        "name": "Start year:"
+      }
+    },
+    {
+      "name": "maxYear",
+      "value": 2022,
+      "bind": {
+        "input": "range",
+        "min": 2000,
+        "max": 2022,
+        "step": 1,
+        "name": "End year:"
+      }
+    }
+  ],
+  "layer": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {"field": "date", "type": "temporal", "axis": {
+            "tickWidth": 2,
+            "grid": false,
+            "labelColor": "#cbc7cf",
+            "titleColor": "#cbc7cf",
+            "labelFontSize": 11,
+            "titlePadding": 12,
+            "labelPadding": 5
+          }},
+        "y": {"field": "prediction", "type": "quantitative", "axis": {
+            "tickWidth": 2,
+            "grid": false,
+            "labelColor": "#cbc7cf",
+            "titleColor": "#cbc7cf",
+            "labelFontSize": 11,
+            "titlePadding": 12,
+            "labelPadding": 5
+          }}, 
+          "color": {"value": "#c88b6f"}
+      }
+    },
+    {
+      "mark": "circle",
+      "encoding": {
+        "x": {"field": "date", "type": "temporal"},
+        "y": {"field": "DXY Return (%)", "type": "quantitative"},
+        "color": {"value": "#eff3b9"},
+         "tooltip": [
+          {"field": "date", "type": "temporal", "title": "Date"},
+          {
+            "field": "DXY Return (%)",
+            "type": "quantitative",
+            "title": "DXY Return (%)"
+          }
+        ]
+      }},
+      {
+      "transform": [
+        {"regression": "DXY Return (%)", "on": "date", "params": true},
+        {"calculate": "'R²: '+format(datum.rSquared, '.3f')", "as": "R2"}
+      ],
+      "mark": {
+        "type": "text",
+        "color": "#c88b6f",
+        "x": 385,
+        "align": "right",
+        "y": 8
+      },
+      "encoding": {"text": {"type": "nominal", "field": "R2"}}
+    }
+  ],
+  "data": {"name": "data-01937d82d19a370b5b2d0c078043e98d"},
+  "datasets": {
+    "data-01937d82d19a370b5b2d0c078043e98d": [
+      {
+        "date": "2000-03-27T00:00:00",
+        "US10Y Percent Change": 0.16,
+        "DXY Return (%)": 0.75,
+        "prediction": 0.22984699049660762
+      },
+      {
+        "date": "2000-12-05T00:00:00",
+        "US10Y Percent Change": -1.81,
+        "DXY Return (%)": 0.44,
+        "prediction": 0.22206935663802696
+      },
+      {
+        "date": "2001-10-11T00:00:00",
+        "US10Y Percent Change": 1.74,
+        "DXY Return (%)": 0.61,
+        "prediction": 0.2125394495385784
+      },
+      {
+        "date": "2002-03-13T00:00:00",
+        "US10Y Percent Change": -0.75,
+        "DXY Return (%)": -0.1,
+        "prediction": 0.20783597926046227
+      },
+      {
+        "date": "2002-05-03T00:00:00",
+        "US10Y Percent Change": -0.97,
+        "DXY Return (%)": -1.08,
+        "prediction": 0.20626815583442593
+      },
+      {
+        "date": "2002-11-19T00:00:00",
+        "US10Y Percent Change": -0.75,
+        "DXY Return (%)": 0.5,
+        "prediction": 0.20011982867348976
+      },
+      {
+        "date": "2002-12-19T00:00:00",
+        "US10Y Percent Change": -2.46,
+        "DXY Return (%)": -0.17,
+        "prediction": 0.1991975795993497
+      },
+      {
+        "date": "2003-08-29T00:00:00",
+        "US10Y Percent Change": 0.68,
+        "DXY Return (%)": -0.61,
+        "prediction": 0.19141994574076904
+      },
+      {
+        "date": "2004-06-08T00:00:00",
+        "US10Y Percent Change": 0,
+        "DXY Return (%)": 0.33,
+        "prediction": 0.18268932117224423
+      },
+      {
+        "date": "2005-06-06T00:00:00",
+        "US10Y Percent Change": -0.5,
+        "DXY Return (%)": -0.45,
+        "prediction": 0.17153010737514762
+      },
+      {
+        "date": "2005-09-27T00:00:00",
+        "US10Y Percent Change": 0,
+        "DXY Return (%)": 0.55,
+        "prediction": 0.16805630252921944
+      },
+      {
+        "date": "2006-03-20T00:00:00",
+        "US10Y Percent Change": -0.43,
+        "DXY Return (%)": 0.07,
+        "prediction": 0.16270725789920704
+      },
+      {
+        "date": "2006-11-10T00:00:00",
+        "US10Y Percent Change": -0.65,
+        "DXY Return (%)": -0.08,
+        "prediction": 0.15548297348510687
+      },
+      {
+        "date": "2006-11-28T00:00:00",
+        "US10Y Percent Change": -0.66,
+        "DXY Return (%)": -0.36,
+        "prediction": 0.15492962404062283
+      },
+      {
+        "date": "2007-05-17T00:00:00",
+        "US10Y Percent Change": 1.06,
+        "DXY Return (%)": 0.19,
+        "prediction": 0.14970354595383029
+      },
+      {
+        "date": "2007-06-05T00:00:00",
+        "US10Y Percent Change": 1.01,
+        "DXY Return (%)": -0.18,
+        "prediction": 0.14911945487354217
+      },
+      {
+        "date": "2007-08-31T00:00:00",
+        "US10Y Percent Change": 0.67,
+        "DXY Return (%)": 0.09,
+        "prediction": 0.1464449325585342
+      },
+      {
+        "date": "2007-10-15T00:00:00",
+        "US10Y Percent Change": -0.21,
+        "DXY Return (%)": -0.15,
+        "prediction": 0.14506155894732586
+      },
+      {
+        "date": "2008-01-10T00:00:00",
+        "US10Y Percent Change": 2.36,
+        "DXY Return (%)": -0.62,
+        "prediction": 0.1423870366323179
+      },
+      {
+        "date": "2008-04-10T00:00:00",
+        "US10Y Percent Change": 1.72,
+        "DXY Return (%)": 0.33,
+        "prediction": 0.1395895477740936
+      },
+      {
+        "date": "2008-06-03T00:00:00",
+        "US10Y Percent Change": -1.51,
+        "DXY Return (%)": 0.45,
+        "prediction": 0.13792949944064148
+      },
+      {
+        "date": "2008-06-09T00:00:00",
+        "US10Y Percent Change": 2.03,
+        "DXY Return (%)": 0.77,
+        "prediction": 0.13774504962581346
+      },
+      {
+        "date": "2008-12-01T00:00:00",
+        "US10Y Percent Change": -7.17,
+        "DXY Return (%)": 0.34,
+        "prediction": 0.132365263359997
+      },
+      {
+        "date": "2009-01-13T00:00:00",
+        "US10Y Percent Change": -0.43,
+        "DXY Return (%)": 1.29,
+        "prediction": 0.13104337302039326
+      },
+      {
+        "date": "2009-10-23T00:00:00",
+        "US10Y Percent Change": 2.03,
+        "DXY Return (%)": 0.53,
+        "prediction": 0.12234349008767254
+      },
+      {
+        "date": "2009-11-16T00:00:00",
+        "US10Y Percent Change": -2.92,
+        "DXY Return (%)": -0.21,
+        "prediction": 0.12160569082836048
+      },
+      {
+        "date": "2010-08-27T00:00:00",
+        "US10Y Percent Change": 6.4,
+        "DXY Return (%)": -0.02,
+        "prediction": 0.11287506625983212
+      },
+      {
+        "date": "2011-02-03T00:00:00",
+        "US10Y Percent Change": 1.7,
+        "DXY Return (%)": 0.84,
+        "prediction": 0.10795640453108746
+      },
+      {
+        "date": "2011-06-07T00:00:00",
+        "US10Y Percent Change": 0,
+        "DXY Return (%)": -0.57,
+        "prediction": 0.10414444169130732
+      },
+      {
+        "date": "2011-09-08T00:00:00",
+        "US10Y Percent Change": -2.44,
+        "DXY Return (%)": 0.98,
+        "prediction": 0.10128546956147133
+      },
+      {
+        "date": "2012-04-13T00:00:00",
+        "US10Y Percent Change": -2.88,
+        "DXY Return (%)": 0.67,
+        "prediction": 0.09458379295605468
+      },
+      {
+        "date": "2012-08-31T00:00:00",
+        "US10Y Percent Change": -3.68,
+        "DXY Return (%)": -0.53,
+        "prediction": 0.09027996394339866
+      },
+      {
+        "date": "2012-11-20T00:00:00",
+        "US10Y Percent Change": 3.11,
+        "DXY Return (%)": -0.05,
+        "prediction": 0.08778989144322225
+      },
+      {
+        "date": "2013-03-01T00:00:00",
+        "US10Y Percent Change": -1.59,
+        "DXY Return (%)": 0.48,
+        "prediction": 0.08468498622695009
+      },
+      {
+        "date": "2013-05-10T00:00:00",
+        "US10Y Percent Change": 4.97,
+        "DXY Return (%)": 1.66,
+        "prediction": 0.08253307172062208
+      },
+      {
+        "date": "2013-11-19T00:00:00",
+        "US10Y Percent Change": 1.5,
+        "DXY Return (%)": 0.26,
+        "prediction": 0.07659993601032156
+      },
+      {
+        "date": "2014-04-16T00:00:00",
+        "US10Y Percent Change": 0.38,
+        "DXY Return (%)": 0.04,
+        "prediction": 0.07205017391122936
+      },
+      {
+        "date": "2014-07-02T00:00:00",
+        "US10Y Percent Change": 2.33,
+        "DXY Return (%)": 0.19,
+        "prediction": 0.06968306795426926
+      },
+      {
+        "date": "2014-08-22T00:00:00",
+        "US10Y Percent Change": -0.41,
+        "DXY Return (%)": 0.22,
+        "prediction": 0.06811524452823292
+      },
+      {
+        "date": "2015-05-22T00:00:00",
+        "US10Y Percent Change": 0.91,
+        "DXY Return (%)": 0.64,
+        "prediction": 0.059722777953556516
+      },
+      {
+        "date": "2015-09-24T00:00:00",
+        "US10Y Percent Change": -1.39,
+        "DXY Return (%)": -0.27,
+        "prediction": 0.0558800734779723
+      },
+      {
+        "date": "2015-12-02T00:00:00",
+        "US10Y Percent Change": 1.4,
+        "DXY Return (%)": 0.16,
+        "prediction": 0.05375890060745192
+      },
+      {
+        "date": "2016-03-29T00:00:00",
+        "US10Y Percent Change": -4.23,
+        "DXY Return (%)": -0.82,
+        "prediction": 0.0501313875824998
+      },
+      {
+        "date": "2016-08-26T00:00:00",
+        "US10Y Percent Change": 2.53,
+        "DXY Return (%)": 0.91,
+        "prediction": 0.04552014221179945
+      },
+      {
+        "date": "2017-01-19T00:00:00",
+        "US10Y Percent Change": 2.07,
+        "DXY Return (%)": -0.19,
+        "prediction": 0.041031863384315415
+      },
+      {
+        "date": "2017-09-26T00:00:00",
+        "US10Y Percent Change": 0.9,
+        "DXY Return (%)": 0.4,
+        "prediction": 0.03334645443315054
+      },
+      {
+        "date": "2018-04-06T00:00:00",
+        "US10Y Percent Change": -2.12,
+        "DXY Return (%)": -0.3,
+        "prediction": 0.027444060358650546
+      },
+      {
+        "date": "2018-08-24T00:00:00",
+        "US10Y Percent Change": 0,
+        "DXY Return (%)": -0.51,
+        "prediction": 0.023140231345998075
+      },
+      {
+        "date": "2018-11-28T00:00:00",
+        "US10Y Percent Change": 0,
+        "DXY Return (%)": -0.6,
+        "prediction": 0.020189034308749854
+      },
+      {
+        "date": "2019-03-08T00:00:00",
+        "US10Y Percent Change": -0.76,
+        "DXY Return (%)": -0.25,
+        "prediction": 0.017114870728281772
+      },
+      {
+        "date": "2019-06-25T00:00:00",
+        "US10Y Percent Change": -0.99,
+        "DXY Return (%)": 0.17,
+        "prediction": 0.013764032425573447
+      },
+      {
+        "date": "2019-08-23T00:00:00",
+        "US10Y Percent Change": -6.17,
+        "DXY Return (%)": -0.56,
+        "prediction": 0.011950275913097386
+      },
+      {
+        "date": "2020-04-09T00:00:00",
+        "US10Y Percent Change": -5.19,
+        "DXY Return (%)": -0.61,
+        "prediction": 0.004879699678024707
+      },
+      {
+        "date": "2020-05-13T00:00:00",
+        "US10Y Percent Change": -7.25,
+        "DXY Return (%)": 0.23,
+        "prediction": 0.003834484060664778
+      },
+      {
+        "date": "2020-08-27T00:00:00",
+        "US10Y Percent Change": 7.25,
+        "DXY Return (%)": 0.17,
+        "prediction": 0.0005758706653686829
+      },
+      {
+        "date": "2020-10-06T00:00:00",
+        "US10Y Percent Change": -2.56,
+        "DXY Return (%)": 0.42,
+        "prediction": -0.0006537947668192601
+      },
+      {
+        "date": "2021-08-27T00:00:00",
+        "US10Y Percent Change": -2.24,
+        "DXY Return (%)": -0.37,
+        "prediction": -0.010644826403336083
+      },
+      {
+        "date": "2022-03-21T00:00:00",
+        "US10Y Percent Change": 8.41,
+        "DXY Return (%)": 0.26,
+        "prediction": -0.016977603379096706
+      },
+      {
+        "date": "2022-08-26T00:00:00",
+        "US10Y Percent Change": 0.33,
+        "DXY Return (%)": 0.3,
+        "prediction": -0.021834781836236772
+      },
+      {
+        "date": "2022-11-30T00:00:00",
+        "US10Y Percent Change": -1.87,
+        "DXY Return (%)": -0.72,
+        "prediction": -0.024785978873484993
+      }
+    ]
+  }
+}
