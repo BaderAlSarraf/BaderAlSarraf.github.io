@@ -11,7 +11,7 @@
     },
     "config": {"background": "#122b39", "view": {"stroke": "transparent"}},
     "data": {
-      "url": "https://raw.githubusercontent.com/BaderAlSarraf/BaderAlSarraf.github.io/main/Bank%20Rates%20-%20US%2C%20UK%2C%20Canada%20(MM-DD).csv"
+      "url": "https://raw.githubusercontent.com/BaderAlSarraf/BaderAlSarraf.github.io/main/Portfolio%20Tasks/Week%208/Bank%20Rates%20-%20US%2C%20UK%2C%20Canada%20(MM-DD).csv"
     },
     "transform": [
       {"calculate": "year(datum.DATE)", "as": "year"},
