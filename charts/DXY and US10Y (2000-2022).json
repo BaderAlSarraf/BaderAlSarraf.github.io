@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "data": {
-      "url": "https://raw.githubusercontent.com/BaderAlSarraf/BaderAlSarraf.github.io/main/COMBINED.csv"
+      "url": "https://raw.githubusercontent.com/BaderAlSarraf/BaderAlSarraf.github.io/main/datasets/DXY%20and%20US10Y%202000%20to%202022.csv"
     },
     "mark": "line",
     "width": 500,
