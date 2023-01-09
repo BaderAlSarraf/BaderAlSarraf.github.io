@@ -21,7 +21,7 @@
       "lookup": "properties.NAME",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/BaderAlSarraf/BaderAlSarraf.github.io/main/US%20Voter%20Turnouts%20-%202018.csv"
+          "url": "https://raw.githubusercontent.com/BaderAlSarraf/BaderAlSarraf.github.io/main/Portfolio%20Tasks/Week%207/US%20Voter%20Turnouts%20-%202018.csv"
         },
         "key": "State",
         "fields": ["Voter Turnout (%)"]
