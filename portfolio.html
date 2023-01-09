@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="portfolio.css">
+  <title>Bader Al Sarraf - Data Science Portfolio</title>
+
+      <!--Vega Embed-->
+      <script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+
+</head>
+
+<body>
+  <!-- Header -->
+  <section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div class="brand">
+          <a href="#hero">
+            <h1><span>BADER </span><span></span>ALSARRAF</h1>
+          </a>
+        </div>
+        <div class="nav-list">
+          <div class="hamburger">
+            <div class="bar"></div>
+          </div>
+          <ul>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Header -->
+
+
+  <!-- Hero Section  -->
+  <section id="hero">
+    <div class="hero container">
+      <div>
+        <h1>Welcome <span></span></h1>
+        <h1>to my <span></span></h1>
+        <h1>Data Science Portfolio <span></span></h1>
+        <a href="#projects" type="button" class="cta">Data Science Portfolio</a>
+      </div>
+    </div>
+  </section>
+  <!-- End Hero Section  -->
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="projects container">
+      <div class="projects-header">
+        <h1 class="section-title"><span>Data Science </span>Portfolio Tasks</h1>
+      </div>
+      <div class="all-projects">
+
+        <div class="project-content">
+          <div class="project-info">
+            <h1>Week 1 Portfolio Task</h1>
+            <h2>Setting up web page, and embedding two charts</h2>
+            <p>The first graph illustrates quarterly UK GDP which has a strong up-trend despite the severe contraction during the pandemic. 
+                However, as the economy is reopening and conditions are improving, GDP is going back on its uptrend with the most recent Q4-2021 level at around £590,000. 
+                The second graph demonstrates UK CPI with the most recent level at 10.7%, and the UK is witnessing significant rises in inflation rates despite the BOE's 
+                continued efforts to tame inflation. </p>
+          </div>
+          <div class="chart-container">
+            <div class="chart" id="Chart1"></div>
+            <div class="chart" id="Chart2"></div>
+        </div>
+        </div>
+
+        <div class="project-content">
+          <div class="project-info">
+            <h1>Week 2 Portfolio Task</h1>
+            <h2>Replicating and improving a chart from the Financial Times</h2>
+            <p>The first chart is IMF credit outstanding and the second chart indexes lending as a % of world GDP, with 1984 being the riskiest year.</p>
+          </div>
+          <div class="chart-container">
+            <div class="chart" id="Chart3"></div>
+            <div class="chart" id="Chart4"></div>
+        </div>
+        </div>
+
+        <div class="project-content">
+          <div class="project-info">
+            <h1>Week 3 Portfolio Task</h1>
+            <h2>US Securities</h2>
+            <p>The first chart illustrates rates of different US Securities through an area chart, and we improvised in the second chart through a line chart to depict a 
+              clearer message regarding the performances of these securities. </p>
+          </div>
+          <div class="chart-container">
+            <div class="chart" id="Chart5"></div>
+            <div class="chart" id="Chart6"></div>
+        </div>
+        </div>
+
+        <div class="project-content">
+          <div class="project-info">
+            <h1>Week 4 Portfolio Task</h1>
+            <h2>G20 Gold Reserves</h2>
+            <p>The chart data was scraped from Tradingeconomics.com using "Pandas" in <a href="https://colab.research.google.com/drive/14fTJKxrA52YmAp2jeZLjj6UyD45V1Re1?usp=sharing">Google Colab</a> as 
+              it had all G20 Gold Reserves in one table whereby the US holds the largest reserves at 8133 Tonnes. </p>
+
+          </div>
+          <div class="chart-container">
+            <div class="chart" id="Chart7"></div>
+        </div>
+        </div>
+
+        <div class="project-content">
+          <div class="project-info">
+            <h1>Week 5 Portfolio Task</h1>
+            <h2>UK - Public Sector Finances</h2>
+            <p>To perform this task, we used the PUSF ONS Dataset, and the procedures for extracting the data for chart production can be accessed throuh this
+               <a href="https://colab.research.google.com/drive/18MlTCYalLF0bLM10px3G49Kp8uFcO99d?usp=sharing">Google Colab Notebook.</a> </p>
+          </div>
+          <div class="chart-container">
+            <div class="chart" id="Chart8"></div>
+            <div class="chart" id="Chart9"></div>
+            <div class="chart" id="Chart10"></div>
+            <div class="chart" id="Chart11"></div>
+            <div class="chart" id="Chart12"></div>
+            <div class="chart" id="Chart13"></div>
+            <div class="chart" id="Chart14"></div>
+            <div class="chart" id="Chart15"></div>
+            <div class="chart" id="Chart16"></div>
+        </div>
+        </div>
+
+        <div class="project-content">
+          <div class="project-info">
+            <h1>Week 7 Portfolio Task</h1>
+            <h2>A Base Map and a Choropleth for the US</h2>
+            <p>These charts depict Voter Turnout across the US in the recent Primary Elections of 2020 and connotes this through a color scheme in the Chloropleth Chart.</p>
+          </div>
+          <div class="chart-container">
+            <div class="chart" id="Chart17"></div>
+            <div class="chart" id="Chart18"></div>
+        </div>
+        </div>
+
+        <div class="project-content">
+          <div class="project-info">
+            <h1>Week 8 Portfolio Task</h1>
+            <h2>Festival of Economics: What's Next for Central Banks</h2>
+            <p>Having recently attended the event by Dr Jagit Chadha and Huw Pill, I engaged in the Q&A session and asked about why the Bank of England was not aggressive in its
+              rate hikes compared to its peers and how that has affected the strength of the Pound. The first chart depicts the aggressive rate hikes by the likes of the Fed and 
+              the BoC compared to the BoE. Therefore, in Chart 2, we conclude that rate differentials have indeed had a contribution to the value of the Pound, but surely this was not
+              the only factor and there were many others.</p>
+          </div>
+          <div class="chart-container">
+            <div class="chart" id="Chart19"></div>
+            <div class="chart" id="Chart20"></div>
+        </div>
+        </div>
+
+        <div class="project-content">
+          <div class="project-info">
+            <h1>Week 9 Portfolio Task</h1>
+            <h2>Advanced Charts</h2>
+            <p>The first chart performs a Regression of the Dollar Index on the USD/JPY pair and depicts that a weekly % change in USD/JPY explains 32% of variation in the Dollar 
+              Index. Whereas, the second chart is a heatmap chart showcasing the daily changes in Copper Prices which is a significant commodity now due to recent 
+              news of China re-opening since December 2022.</p>
+
+          </div>
+          <div class="chart-container">
+            <div class="chart" id="Chart21"></div>
+            <div class="chart" id="Chart22"></div>
+        </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-info">
+            <h1>Week 10 and 11 Portfolio Task</h1>
+            <h2>Machine Learning: Part 1</h2>
+            <p>For this task, the Machine Learning Notebook can be accessed <a href="https://colab.research.google.com/drive/18MlTCYalLF0bLM10px3G49Kp8uFcO99d?usp=sharing">here.</a> 
+              The first chart demonstrates the first set of Machine Learning Tasks, which includes Supervised Learning and our case study focused on Breast Cancer which was taken 
+              from sklearn.</p>
+          </div>
+          <div class="img">
+            <img src="./Portfolio Tasks/Week 10 and Week 11/Breast Cancer Chart.jpg" alt="img">
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-info">
+            <h1>Week 10 and 11 Portfolio Task</h1>
+            <h2>Machine Learning: Part 2</h2>
+            <p>For this task, the Machine Learning Notebook can be accessed <a href="https://colab.research.google.com/drive/1nBg-oTgic2YhtuvOxtcV8OGVn36Gvoa6?usp=sharing">here.</a> 
+              The second chart demonstrates which of our Securities we plotted move close to each other during the Time Frame, and we discover that the Dollar Index and Gold 
+              moved closest to each other, whereas Crude Oil and US10-Year Yields moved closest to each other. </p>
+          </div>
+          <div class="img">
+            <img src="./Portfolio Tasks/Week 10 and Week 11/Securities Machine Learning.jpg" alt="img">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- End Projects Section -->
+
+
+  <script>
+    // Define charts:
+    var myChart1 = "./Portfolio Tasks/Week 1/GDP Chart.json";
+    var myChart2 = "./Portfolio Tasks/Week 1/UK CPI Chart.json";
+    var myChart3 = "./Portfolio Tasks/Week 2/IMF Lending Outstanding Chart.json";
+    var myChart4 = "./Portfolio Tasks/Week 2/Total Credit GDP Percentage.json";
+    var myChart5 = "./Portfolio Tasks/Week 3/Area Chart US Securities Rates Data.json";
+    var myChart6 = "./Portfolio Tasks/Week 3/Line Chart US Securities Rates Data.json";
+    var myChart7 = "./Portfolio Tasks/Week 4/G20 Gold Reserves.json";
+    var myChart8 = "./Portfolio Tasks/Week 5/Charts/Central Government Net Borrowing.json";
+    var myChart9 = "./Portfolio Tasks/Week 5/Charts/Current Budget Deficit.json";
+    var myChart10 = "./Portfolio Tasks/Week 5/Charts/Local Government Net Borrowing.json";
+    var myChart11 = "./Portfolio Tasks/Week 5/Charts/Net Borrowing.json";
+    var myChart12 = "./Portfolio Tasks/Week 5/Charts/Net Debt percentage of GDP.json";
+    var myChart13 = "./Portfolio Tasks/Week 5/Charts/Net Debt.json";
+    var myChart14 = "./Portfolio Tasks/Week 5/Charts/Net Investment.json";
+    var myChart15 = "./Portfolio Tasks/Week 5/Charts/Public Sector Banks Net Borrowing.json";
+    var myChart16 = "./Portfolio Tasks/Week 5/Charts/Public Sector Pensions NB.json";
+    var myChart17 = "./Portfolio Tasks/Week 7/USA Base Map.json";
+    var myChart18 = "./Portfolio Tasks/Week 7/Chloropleth Voter Turnout.json";
+    var myChart19 = "./Portfolio Tasks/Week 8/Bank Rates of US, UK, Canada.json";
+    var myChart20 = "./Portfolio Tasks/Week 8/Spot Rates into Sterling.json";
+    var myChart21 = "./Portfolio Tasks/Week 9/DXY and USDJPY Regression.json";
+    var myChart22 = "./Portfolio Tasks/Week 9/Daily Changes in Copper Prices 2022.json";
+
+    // Embed charts:
+    vegaEmbed('#Chart1', myChart1);
+    vegaEmbed('#Chart2', myChart2);
+    vegaEmbed('#Chart3', myChart3);
+    vegaEmbed('#Chart4', myChart4);
+    vegaEmbed('#Chart5', myChart5);
+    vegaEmbed('#Chart6', myChart6);
+    vegaEmbed('#Chart7', myChart7);
+    vegaEmbed('#Chart8', myChart8);
+    vegaEmbed('#Chart9', myChart9);
+    vegaEmbed('#Chart10', myChart10);
+    vegaEmbed('#Chart11', myChart11);
+    vegaEmbed('#Chart12', myChart12);
+    vegaEmbed('#Chart13', myChart13);
+    vegaEmbed('#Chart14', myChart14);
+    vegaEmbed('#Chart15', myChart15);
+    vegaEmbed('#Chart16', myChart16);
+    vegaEmbed('#Chart17', myChart17);
+    vegaEmbed('#Chart18', myChart18);
+    vegaEmbed('#Chart19', myChart19);
+    vegaEmbed('#Chart20', myChart20);
+    vegaEmbed('#Chart21', myChart21);
+    vegaEmbed('#Chart22', myChart22);
+</script>
+
+  <!-- Footer -->
+  <section id="footer">
+    <div class="footer container">
+      <div class="brand">
+        <h1><span>BADER </span><span></span>ALSARRAF</h1>
+      </div>
+      <h2>ECON30006: DATA SCIENCE</h2>
+      <div class="social-icon">
+        <div class="social-item">
+          <a href="https://instagram.com/baderalsarraf_?igshid=YmMyMTA2M2Y="><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" /></a>
+        </div>
+        <div class="social-item">
+          <a href="https://www.linkedin.com/in/bader-alsarraf/"><img src="./img/linkedin-logo.png" alt="img" /></a>
+        </div>
+      </div>
+      <p>Web Template inspired by Shaif Arfan | GitHub https://github.com/ShaifArfan</p>
+    </div>
+  </section>
+  <!-- End Footer -->
+  <script src="./app.js"></script>
+</body>
+
+</html>
