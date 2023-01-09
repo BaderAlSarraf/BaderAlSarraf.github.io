@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Bader Al Sarraf - Data Science Project</title>
+
+      <!--Vega Embed-->
+      <script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+
+</head>
+
+<body>
+  <!-- Header -->
+  <section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div class="brand">
+          <a href="#hero">
+            <h1><span>BADER </span><span></span>ALSARRAF</h1>
+          </a>
+        </div>
+        <div class="nav-list">
+          <div class="hamburger">
+            <div class="bar"></div>
+          </div>
+          <ul>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Header -->
+
+
+  <!-- Hero Section  -->
+  <section id="hero">
+    <div class="hero container">
+      <div>
+        <h1>Hello, <span></span></h1>
+        <h1>My Name is <span></span></h1>
+        <h1>Bader Al Sarraf <span></span></h1>
+        <a href="#projects" type="button" class="cta">Data Science Project</a>
+      </div>
+    </div>
+  </section>
+  <!-- End Hero Section  -->
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="projects container">
+      <div class="projects-header">
+        <h1 class="section-title"><span>Data Science </span>Project</h1>
+      </div>
+      <div class="all-projects">
+        <div class="project-item">
+          <div class="project-info">
+            <h1>Central Bank Intervention and Securities:</h1>
+            <h2>Investigating the Connection</h2>
+            <p>This project aims to investigate the impact of central bank intervention, specifically by the Federal Reserve, 
+              on securities like the DXY and US10Y. Using techniques including data visualization, machine learning, and regression analysis, we will analyze the effects of FOMC actions 
+              and jawboning speeches. Our findings will provide insights into the effectiveness of these interventions and help to determine which has the greatest influence on 
+              financial markets and economic policy. This project will be reviewed by 
+              <a href="https://www.linkedin.com/posts/sigma-financial-ltd_it-was-an-absolute-delight-to-host-andrew-activity-6998988537056378880-595-?utm_source=share&utm_medium=member_desktop">SIGMA Finanacial AI</a>
+            as part of my partnership with them.</p>
+          </div>
+          <div class="project-img">
+            <img src="./img/FED_DOLLAR.webp" alt="img">
+          </div>
+        </div>
+
+        <div class="project-content">
+          <div class="project-info">
+            <h1>The Federal Reserve and the USD:</h1>
+            <h2>A Dominant Force in Global Financial Markets</h2>
+            <p>The first chart illustrates the distribution of global foreign exchange reserves among the US Dollar, Euro, and Japanese Yen. The Dollar has consistently held the largest 
+              share, averaging around 63%. The second chart displays the performance of the US Dollar Index (DXY) and 10-Year U.S. Treasury Yield (US10Y), securities that are heavily 
+              impacted by the Federal Reserve's monetary policy. By analyzing the effects of FOMC actions and jawboning speeches, we can assess the impact of these interventions on 
+              financial markets and economic policy.</p>
+          </div>
+          <div class="chart-container">
+            <div class="chart" id="Chart1"></div>
+            <div class="chart" id="Chart2"></div>
+        </div>
+        </div>
+
+        <div class="project-content">
+          <div class="project-info">
+            <h1>Impact of FOMC Actions on the DXY and US10Y</h1>
+            <h2></h2>
+            <p>This analysis examines the impact of Federal Open Market Committee (FOMC) actions on securities such as the DXY and US10Y. The first chart presents the Federal Funds Rate 
+              from 2000 to 2022, including significant rate hikes and cuts. The second chart displays the DXY and US10Y rates from 2000 to 2022, filtered to only show intraday % changes 
+              on FOMC dates. These charts demonstrate the power of FOMC actions to influence the performance of securities and shape market expectations. For instance, the 100bps rate 
+              cut on December 16, 2008, resulted in an intraday decrease in the DXY and US10Y by -1.71% and -6.32% respectively. Data for these charts was obtained from FRED as an API 
+              for the Federal Funds Rate, and from a table on Forbes Advisor for FOMC dates, which was then scraped and sorted using Google Colab and Excel.</p>
+          </div>
+          <div class="chart-container">
+            <div class="chart" id="Chart3"></div>
+            <div class="chart" id="Chart4"></div>
+        </div>
+        </div>
+
+        <div class="project-content">
+          <div class="project-info">
+            <h1>Jawboning and its Effect on the DXY and US10Y</h1>
+            <h2></h2>
+            <p>This analysis examines the effects of jawboning, or the use of verbal communication to influence market expectations, on securities such as the DXY and US10Y. The first 
+              chart presents a timeline of jawboning speeches by Fed Chairs from 2000 to 2022, with different icons representing different speech types. The second chart displays the 
+              DXY and US10Y rates from 2000 to 2022, filtered to only show intraday % changes on the days of these speeches. These charts show the influence of jawboning on the 
+              performance of these securities and market expectations, due to key words or themes that can be speculative to many market participants. The data for these charts was 
+              obtained from the Federal Reserve Board of Governors, Yahoo Finance, and FRED, and was filtered and sorted using Google Colab and Excel.</p>
+          </div>
+          <div class="chart-container">
+            <div class="chart" id="Chart5"></div>
+            <div class="chart" id="Chart6"></div>
+        </div>
+        </div>
+
+        <div class="project-content">
+          <div class="project-info">
+            <h1>FOMC vs Jawboning:</h1>
+            <h2>A Comparative Analysis</h2>
+            <p>The analysis of the MSE and R-squared values for the FOMC and Speeches Models revealed that the latter was a better fit for the data, with a higher R-squared value of -0.122 
+              and a lower MSE of 11.667. A regression analysis was then conducted to compare the impact on the DXY and US10Y, showing that the DXY had a higher R-squared of 0.0172 compared 
+              to the US10Y R-squared of 0.00047. These findings suggest that jawboning speeches may have a significant impact on the DXY, however it is important to note that there are 
+              numerous other factors that can influence the performance of these securities, and the analysis should not be taken as conclusive evidence. To conduct this analysis, the 
+              CSV files for the FOMC dates and jawboning speeches were imported and machine learning and regression codes were run using Python in Google Colab. It's worth noting that 
+              the US10Y data was often regarded as extreme values due to its volatility and sensitivity to FOMC and speeches.</p>
+          </div>
+          <div class="chart-container">
+            <div class="chart" id="Chart7"></div>
+            <div class="chart" id="Chart8"></div>
+        </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-info">
+            <h1>Central Bank Intervention and Securities:</h1>
+            <h2>A Comprehensive Summary</h2>
+            <p>In conclusion, this project has provided an in-depth analysis of the relationship between Central Bank intervention by the Federal Reserve and securities such as the DXY 
+              and US10Y. Through the analysis of FOMC actions and Jawboning speeches, we have evaluated the effectiveness of these interventions and determined that Jawboning speeches 
+              may have a significant impact on the performance of the DXY. It is worth noting that there are many other factors that can also influence the performance of these securities, 
+              as demonstrated by the FOMC's impact on the US10Y during the COVID-19 pandemic and the 100bps rate cut in December 2008. Further study could examine the impact of other 
+              central banks such as the Bank of Japan and the use of other forms of intervention, such as quantitative easing, on financial markets and securities.</p>
+          </div>
+          <div class="project-img">
+            <img src="./img/FED.jpg" alt="img">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Projects Section -->
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="about container">
+      <div class="col-left">
+        <div class="about-img">
+          <img src="./img/Bader Official Photo.png" alt="img">
+        </div>
+      </div>
+      <div class="col-right">
+        <h1 class="section-title">About <span>me</span></h1>
+        <h2>BSc Economics and Finance Student | President of Bristol Trading Society</h2>
+        <p>My everlasting passion for Financial Markets has driven the foundations of this Data Science Project. Being a Trader for the past few years enabled me to apply my 
+          knowledge and uncover new-found information during this project: testimony to the power of Data and AI.</p>
+        <a href="https://drive.google.com/file/d/1FRxy2G4usyzS2HEUwYIUjsRRbCHXm6fA/view?usp=sharing" class="cta">Download Resume</a>
+      </div>
+    </div>
+  </section>
+  <!-- End About Section -->
+
+  <script>
+    // Define charts:
+    var myChart1 = "./charts/Global FX Reserves.json";
+    var myChart2 = "./charts/DXY and US10Y (2000-2022).json";
+    var myChart3 = "./charts/Fed Funds Rate (2000-2022).json";
+    var myChart4 = "./charts/DXY and US10Y (Filtered for FOMC Dates).json";
+    var myChart5 = "./charts/Fed Chairs Jawboning Timeline.json";
+    var myChart6 = "./charts/DXY and US10Y (Filtered for Jawboning).json";
+    var myChart7 = "./charts/MSE and R^2 - FOMC and Speeches Model.json";
+    var myChart8 = "./charts/DXY Regression - Speeches.json";
+
+    // Embed charts:
+    vegaEmbed('#Chart1', myChart1);
+    vegaEmbed('#Chart2', myChart2);
+    vegaEmbed('#Chart3', myChart3);
+    vegaEmbed('#Chart4', myChart4);
+    vegaEmbed('#Chart5', myChart5);
+    vegaEmbed('#Chart6', myChart6);
+    vegaEmbed('#Chart7', myChart7);
+    vegaEmbed('#Chart8', myChart8);
+</script>
+
+  <!-- Footer -->
+  <section id="footer">
+    <div class="footer container">
+      <div class="brand">
+        <h1><span>BADER </span><span></span>ALSARRAF</h1>
+      </div>
+      <h2>ECON30006: DATA SCIENCE</h2>
+      <div class="social-icon">
+        <div class="social-item">
+          <a href="https://instagram.com/baderalsarraf_?igshid=YmMyMTA2M2Y="><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" /></a>
+        </div>
+        <div class="social-item">
+          <a href="https://www.linkedin.com/in/bader-alsarraf/"><img src="./img/linkedin-logo.png" alt="img" /></a>
+        </div>
+      </div>
+      <p>Web Template inspired by Shaif Arfan | GitHub https://github.com/ShaifArfan</p>
+    </div>
+  </section>
+  <!-- End Footer -->
+  <script src="./app.js"></script>
+</body>
+
+</html>
