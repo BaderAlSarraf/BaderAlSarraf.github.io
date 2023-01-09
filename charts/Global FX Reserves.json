@@ -11,7 +11,7 @@
     },
     "height": 300,
     "config": {"background": "#122b39", "view": {"stroke": "transparent"}},
-    "data": {"url": "https://raw.githubusercontent.com/BaderAlSarraf/BaderAlSarraf.github.io/main/FX%20Reserves.csv"},
+    "data": {"url": "https://raw.githubusercontent.com/BaderAlSarraf/BaderAlSarraf.github.io/main/datasets/FX%20Reserves.csv"},
         "mark": {
       "type": "bar",
       "stroke": "black",
